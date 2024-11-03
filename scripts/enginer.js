@@ -9,7 +9,7 @@ const state = {
         gameVelocity: 1000,
         hitPosition: 0,
         result: 0,
-        currentTime: 60,
+        currentTime: 12,
     },
 
     actions: {
@@ -23,10 +23,12 @@ function countDown() {
     state.view.timeLetf.textContent = state.value.currentTime;
 
     if(state.value.currentTime <= 0) {
-        clearInterval(state.value.actions.countDownTime);  // esse...
-        clearInterval(state.value.actions.timeId);         // ...e essecomando deveria limpar após zerar o conometro, porem ele zera em -12. debugar:
+        //clearInterval(state.value.actions.countDownTime);  // esse...
+        //clearInterval(state.value.actions.timeId);         // ...e essecomando deveria limpar após zerar o conometro, porem ele zera em -12. debugar:
         alert(`GAME OVER JOGADOOOOR / SEU SCORE FOI: ${state.value.result}`);
 
+        clearInterval(state.value.actions.countDownTime);  // esse...
+        clearInterval(state.value.actions.timeId);         // ...e essecomando deveria limpar após zerar o conometro, porem ele zera em -12. debugar:
 
     }
 }
